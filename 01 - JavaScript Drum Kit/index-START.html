@@ -66,6 +66,12 @@
     audio.play();
     key.classList.add('playing');
   });
+
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition)); //when you have an array (or a Node list in this case)
+  //of elements you can't listen on all of them, you must iterate
+  //when the transition ends it is removed
+  
 </script>
 
 
