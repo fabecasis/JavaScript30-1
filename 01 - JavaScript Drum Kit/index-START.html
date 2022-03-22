@@ -67,11 +67,16 @@
     key.classList.add('playing');
   });
 
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return; // skip it when it's not transform
+    this.classList.remove('playing')
+  }
+  
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend', removeTransition)); //when you have an array (or a Node list in this case)
   //of elements you can't listen on all of them, you must iterate
   //when the transition ends it is removed
-  
+
 </script>
 
 
