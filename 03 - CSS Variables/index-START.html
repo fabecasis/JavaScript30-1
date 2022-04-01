@@ -59,6 +59,19 @@
   </style>
 
   <script>
+    const inputs = document.querySelectorAll('.controls input') /* select all inputs on the page */
+    /* it creates a NodeList, not an Array. the big difference is that an array has all kinds of methods for dealing
+    with an array like map, reduce, etc. and a NodeList has way few methods (as you can see if you open the prototype
+    inside the console). In this case we'll use the ForEach method which was recently added to NodeLists.
+    it is not necessary to convert it to an array then. */
+
+    function handleUpdate () {
+      console.log(this.value);
+    }
+
+    inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate)); /* so that the change is triggered when
+    we drag things around* */
   </script>
 
 </body>
