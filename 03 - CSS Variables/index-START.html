@@ -68,6 +68,7 @@
     function handleUpdate () {
       const suffix = this.dataset.sizing || ''; // dataset is an object that will contain all of the data attributes from that specific element
       // sizing || '' -> sizing or nothing becasue if I don't leave it like that we're gonna append unfefined at the end
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix); // update a variable by selecting it
     }
 
     inputs.forEach(input => input.addEventListener('change', handleUpdate));
